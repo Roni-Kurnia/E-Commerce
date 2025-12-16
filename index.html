@@ -15,8 +15,30 @@
             <li><a href="#koleksi" onclick="showSection('koleksi')">Koleksi</a></li>
             <li><a href="#tentang" onclick="showSection('tentang')">Tentang</a></li>
             <li><a href="#kontak" onclick="showSection('kontak')">Kontak</a></li>
+
+            <!-- Cart -->
+             <li class="cart-icon-container" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </li>
         </ul>
     </nav>
+
+    <!-- Cart -->
+     <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Keranjang Belanja</h3>
+                <span class="close-cart" onclick="toggleCart()">&times;</span>
+            </div>
+            <div id="cartItems" class="cart-items">
+                <p class="empty-msg">Keranjang masih kosong</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: <span id="cartTotalDisplay">Rp 0</span></div>
+                <button onclick="goToCheckout()" class="checkout-btn">Lanjut Pembayaran</button>
+            </div>
+        </div>
+    </div>
 
     <!-- HOME PAGE -->
     <div id="home" class="page-section active">
@@ -34,35 +56,48 @@
             <h2 class="section-title">Koleksi Terbaru</h2>
             <div class="products-preview">
                 <div class="product-card-preview">
-                    <div class="product-image-preview">🧥</div>
+                    <div class="product-image-preview">
+                        <img src="img/Jaket2.png" alt="Vintage Denim Jacket" style="width: 100%;">
+                    </div>
                     <div class="product-info-preview">
                         <h3>Vintage Denim Jacket</h3>
                         <p>Jaket denim klasik dengan kualitas premium</p>
-                        <div class="price">Rp 250.000</div>
                     </div>
                 </div>
                 <div class="product-card-preview">
-                    <div class="product-image-preview">👔</div>
+                    <div class="product-image-preview">
+                        <img src="img/Kemeja1.png" alt="Casual Shirt Collection" style="width: 100%;">
+                    </div>
                     <div class="product-info-preview">
                         <h3>Casual Shirt Collection</h3>
                         <p>Kemeja kasual untuk penampilan stylish</p>
-                        <div class="price">Rp 150.000</div>
                     </div>
                 </div>
                 <div class="product-card-preview">
-                    <div class="product-image-preview">👗</div>
+                    <div class="product-image-preview">
+                        <img src="img/Dress2.png" alt="Summer Dress" style="width: 100%;">
+                    </div>
                     <div class="product-info-preview">
                         <h3>Summer Dress</h3>
                         <p>Dress musim panas yang nyaman dan modis</p>
-                        <div class="price">Rp 200.000</div>
                     </div>
                 </div>
                 <div class="product-card-preview">
-                    <div class="product-image-preview">🧢</div>
+                    <div class="product-image-preview">
+                        <img src="img/Hoodie1.png" alt="Oversized Hoodie" style="width: 100%;">
+                    </div>
                     <div class="product-info-preview">
                         <h3>Oversized Hoodie</h3>
                         <p>Hoodie oversized untuk gaya streetwear</p>
-                        <div class="price">Rp 180.000</div>
+                    </div>
+                </div>
+                <div class="product-card-preview">
+                    <div class="product-image-preview">
+                        <img src="img/Celana2.png" alt="Jeans" style="width: 100%;">
+                    </div>
+                    <div class="product-info-preview">
+                        <h3>Jeans</h3>
+                        <p>Jeans berkualitas tinggi untuk gaya kasual</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +149,9 @@
                 <!-- Product 1 -->
                 <div class="product-card" data-category="jaket">
                     <div class="product-image-container jaket">
-                        <div class="product-image">🧥</div>
+                        <div class="product-image">
+                            <img src="img/Jaket1.png" alt="jaket" style="width: 110%;">
+                        </div>
                         <span class="badge">Sale</span>
                     </div>
                     <div class="product-info">
@@ -134,7 +171,9 @@
                 <!-- Product 2 -->
                 <div class="product-card" data-category="kemeja">
                     <div class="product-image-container kemeja">
-                        <div class="product-image">👔</div>
+                        <div class="product-image">
+                            <img src="img/Kemeja1.png" alt="kemeja" style="width: 130%;">
+                        </div>
                         <span class="badge new">Baru</span>
                     </div>
                     <div class="product-info">
@@ -153,7 +192,9 @@
                 <!-- Product 3 -->
                 <div class="product-card" data-category="dress">
                     <div class="product-image-container dress">
-                        <div class="product-image">👗</div>
+                        <div class="product-image">
+                            <img src="img/Dress1.png" alt="Dress" style="width: 110%;">
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Dress</div>
@@ -171,7 +212,9 @@
                 <!-- Product 4 -->
                 <div class="product-card" data-category="hoodie">
                     <div class="product-image-container hoodie">
-                        <div class="product-image">🧢</div>
+                        <div class="product-image">
+                            <img src="img/Hoodie1.png" alt="Hoodie" style="width: 110%;">
+                        </div>
                         <span class="badge new">Baru</span>
                     </div>
                     <div class="product-info">
@@ -190,7 +233,9 @@
                 <!-- Product 5 -->
                 <div class="product-card" data-category="jaket">
                     <div class="product-image-container jaket">
-                        <div class="product-image">🧥</div>
+                        <div class="product-image">
+                            <img src="img/Jaket2.png" alt="Jaket" style="width: 110%;">
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Jaket</div>
@@ -208,7 +253,9 @@
                 <!-- Product 6 -->
                 <div class="product-card" data-category="kemeja">
                     <div class="product-image-container kemeja">
-                        <div class="product-image">👕</div>
+                        <div class="product-image">
+                            <img src="img/Kemeja2.png" alt="Kemeja" style="width: 110%;">
+                        </div>
                         <span class="badge">Sale</span>
                     </div>
                     <div class="product-info">
@@ -228,7 +275,9 @@
                 <!-- Product 7 -->
                 <div class="product-card" data-category="celana">
                     <div class="product-image-container celana">
-                        <div class="product-image">👖</div>
+                        <div class="product-image">
+                            <img src="img/Celana1.png" alt="Celana" style="width: 110%;">
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Celana</div>
@@ -246,7 +295,9 @@
                 <!-- Product 8 -->
                 <div class="product-card" data-category="dress">
                     <div class="product-image-container dress">
-                        <div class="product-image">👗</div>
+                        <div class="product-image">
+                            <img src="img/Dress2.png" alt="Dress" style="width: 110%;">
+                        </div>
                         <span class="badge new">Baru</span>
                     </div>
                     <div class="product-info">
@@ -265,7 +316,9 @@
                 <!-- Product 9 -->
                 <div class="product-card" data-category="hoodie">
                     <div class="product-image-container hoodie">
-                        <div class="product-image">🧢</div>
+                        <div class="product-image">
+                            <img src="img/Hoodie2.png" alt="Hoodie" style="width: 110%;">
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Hoodie</div>
@@ -283,7 +336,9 @@
                 <!-- Product 10 -->
                 <div class="product-card" data-category="celana">
                     <div class="product-image-container celana">
-                        <div class="product-image">👖</div>
+                        <div class="product-image">
+                            <img src="img/Celana2.png" alt="Celana" style="width: 110%;">
+                        </div>
                         <span class="badge">Sale</span>
                     </div>
                     <div class="product-info">
@@ -303,7 +358,9 @@
                 <!-- Product 11 -->
                 <div class="product-card" data-category="jaket">
                     <div class="product-image-container jaket">
-                        <div class="product-image">🧥</div>
+                        <div class="product-image">
+                            <img src="img/Jaket3.png" alt="Jaket" style="width: 110%;">
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Jaket</div>
@@ -321,7 +378,9 @@
                 <!-- Product 12 -->
                 <div class="product-card" data-category="kemeja">
                     <div class="product-image-container kemeja">
-                        <div class="product-image">👕</div>
+                        <div class="product-image">
+                            <img src="img/Kemeja3.png" alt="Kemeja" style="width: 110%;">
+                        </div>
                         <span class="badge new">Baru</span>
                     </div>
                     <div class="product-info">
@@ -353,7 +412,9 @@
         <!-- Story -->
         <section class="story">
             <div class="story-container">
-                <div class="story-image">🌱</div>
+                <div class="story-image">
+                    <img src="img/Jumbotron.png" alt="" style="width: 100%;">
+                </div>
                 <div class="story-content">
                     <h2>Cerita Kami</h2>
                     <p>The Thrift dimulai dari sebuah mimpi sederhana: membuat fashion berkualitas dapat diakses oleh semua orang tanpa merusak lingkungan.</p>
@@ -396,23 +457,23 @@
             <div class="team-grid">
                 <div class="team-member">
                     <div class="team-photo">👨‍💼</div>
-                    <h3>Andi Pratama</h3>
-                    <p>Founder & CEO</p>
+                    <h3>Ahmad Fauzan</h3>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">👨‍💼</div>
+                    <h3>Roni Kurnia</h3>
                 </div>
                 <div class="team-member">
                     <div class="team-photo">👩‍💼</div>
-                    <h3>Sarah Wijaya</h3>
-                    <p>Creative Director</p>
+                    <h3>Airin Meidiana</h3>
                 </div>
                 <div class="team-member">
-                    <div class="team-photo">👨‍💻</div>
-                    <h3>Budi Santoso</h3>
-                    <p>Operations Manager</p>
+                    <div class="team-photo">👨‍💼</div>
+                    <h3>Ramdika Rovansah</h3>
                 </div>
                 <div class="team-member">
-                    <div class="team-photo">👩‍🎨</div>
-                    <h3>Lisa Kusuma</h3>
-                    <p>Fashion Curator</p>
+                    <div class="team-photo">👨‍💼</div>
+                    <h3>Ade Rifki</h3>
                 </div>
             </div>
         </section>
@@ -439,7 +500,7 @@
                         <div class="info-icon">📍</div>
                         <div class="info-content">
                             <h3>Alamat</h3>
-                            <p>Jl. Margonda Raya No. 123<br>Depok, Jawa Barat 16424<br>Indonesia</p>
+                            <p>Jl. Raya Jatiwaringin No.12,<br>Bekasi, Jawa Barat<br>Indonesia</p>
                         </div>
                     </div>
 
@@ -447,7 +508,7 @@
                         <div class="info-icon">📱</div>
                         <div class="info-content">
                             <h3>WhatsApp</h3>
-                            <p><a href="https://wa.me/628123456789">+62 812-3456-7890</a></p>
+                            <p><a href="#">+62 812-3456-789O</a></p>
                         </div>
                     </div>
 
@@ -510,10 +571,10 @@
             </div>
 
             <!-- Map -->
-            <div class="map-section">
+            <!-- <div class="map-section">
                 <h2>Lokasi Kami</h2>
                 <div class="map-placeholder">🗺️</div>
-            </div>
+            </div> -->
 
             <!-- Social Media -->
             <div class="social-section">
@@ -540,6 +601,54 @@
         </section>
     </div>
 
+    <!-- Cart -->
+     <div id="pembelian" class="page-section">
+        <section class="collection-hero">
+            <div class="collection-hero-content">
+                <h1>Pembayaran</h1>
+                <p>Selesaikan pesanan Anda</p>
+            </div>
+        </section>
+
+        <section class="checkout-section">
+            <div class="checkout-container">
+                <div class="order-summary">
+                    <h2>Rincian Pesanan</h2>
+                    <div id="checkoutItems"></div>
+                    <div class="total-row">
+                        <span>Total Pembayaran</span>
+                        <span id="finalTotal" class="highlight-price">Rp 0</span>
+                    </div>
+                </div>
+
+                <div class="payment-info">
+                    <h2>Metode Pembayaran</h2>
+                    <div class="bank-card">
+                        <div class="bank-logo">BCA</div>
+                        <div class="bank-details">
+                            <p class="acc-number">555-202-4939</p>
+                            <p class="acc-name">a.n The Thrift UIA</p>
+                            <button class="copy-btn" onclick="copyRekening()">Salin No. Rek</button>
+                        </div>
+                    </div>
+
+                    <div class="upload-proof">
+                        <label>Upload Bukti Transfer</label>
+                        <input type="file" id="paymentProof" accept="image/*" onchange="previewImage(event)">
+                        <div id="imagePreview" class="image-preview-box">
+                            <span>Preview Bukti Bayar</span>
+                        </div>
+                        <p class="note-text">*Pastikan nominal transfer sesuai dengan total.</p>
+                    </div>
+
+                    <button onclick="processToWhatsApp()" class="confirm-pay-btn">
+                        Konfirmasi via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -550,12 +659,12 @@
             <div class="footer-section">
                 <h3>Kontak</h3>
                 <p>Email: hello@thethrift.com</p>
-                <p>WhatsApp: +62 812-3456-7890</p>
+                <p>WhatsApp: +62 812-3456-789O</p>
                 <p>Instagram: @thethrift.id</p>
             </div>
             <div class="footer-section">
                 <h3>Lokasi</h3>
-                <p>Depok, Jawa Barat</p>
+                <p>Bekasi, Jawa Barat</p>
                 <p>Indonesia</p>
             </div>
             <div class="footer-section">
@@ -565,9 +674,13 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 The Thrift. All rights reserved.</p>
+            <p>&copy; 2025 The Thrift. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div id="toast-container" class="toast-container"></div>
+
 
     <script>
         // Page Navigation
@@ -632,8 +745,312 @@
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const productTitle = btn.closest('.product-card').querySelector('.product-title').textContent;
-                alert(`Terima kasih! "${productTitle}" telah ditambahkan ke keranjang.\n\nHubungi kami di WhatsApp untuk melanjutkan pembelian.`);
             });
+        });
+
+        // Cart and Checkout Functionality
+        // --- STATE MANAGEMENT ---
+        let cart = JSON.parse(localStorage.getItem('theThriftCart')) || [];
+        
+        // --- HELPER FUNCTIONS ---
+        const formatRupiah = (number) => {
+            return new Intl.NumberFormat('id-ID', { 
+                style: 'currency', 
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(number);
+        };
+
+        const parsePrice = (priceString) => {
+            // Mengubah "Rp 250.000" menjadi 250000 (integer)
+            return parseInt(priceString.replace(/[^0-9]/g, ''));
+        };
+
+        // --- NAVIGATION ---
+        function showSection(sectionId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Tutup cart jika terbuka
+            document.getElementById('cartModal').classList.remove('active');
+        }
+
+        // --- CART LOGIC ---
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            modal.classList.toggle('active');
+            renderCart();
+        }
+
+        // --- NOTIFICATION FUNCTION (BARU) ---
+    function showNotification(message) {
+        const container = document.getElementById('toast-container');
+        
+        // Buat elemen notifikasi baru
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+            <div class="toast-icon">👍</div>
+            <div class="toast-message">${message}</div>
+        `;
+
+        // Masukkan ke dalam container
+        container.appendChild(toast);
+
+        // Trigger animasi masuk (sedikit delay agar transisi CSS jalan)
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 10);
+
+        // Hapus notifikasi otomatis setelah 3 detik
+        setTimeout(() => {
+            toast.classList.remove('show');
+            // Hapus elemen dari DOM setelah animasi keluar selesai
+            setTimeout(() => {
+                toast.remove();
+            }, 400);
+        }, 3000);
+    }
+
+    // --- CART LOGIC (UPDATE) ---
+    function addToCart(title, priceString, imageSrc) {
+        const price = parsePrice(priceString);
+        
+        // Cek jika item sudah ada
+        const existingItem = cart.find(item => item.title === title);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                title: title,
+                price: price,
+                image: imageSrc,
+                quantity: 1
+            });
+        }
+        
+        saveCart();
+        updateCartCount();
+        
+        // GANTI ALERT LAMA DENGAN NOTIFIKASI BARU DISINI
+        // alert(`"${title}" berhasil ditambahkan ke keranjang!`); <-- Kode lama dihapus
+        showNotification(`<b>${title}</b> berhasil masuk keranjang!`); 
+    }
+
+        // function addToCart(title, priceString, imageSrc) {
+        //     const price = parsePrice(priceString);
+            
+        //     // Cek jika item sudah ada
+        //     const existingItem = cart.find(item => item.title === title);
+            
+        //     if (existingItem) {
+        //         existingItem.quantity += 1;
+        //     } else {
+        //         cart.push({
+        //             title: title,
+        //             price: price,
+        //             image: imageSrc,
+        //             quantity: 1
+        //         });
+        //     }
+            
+        //     saveCart();
+        //     updateCartCount();
+        //     alert(`"${title}" berhasil ditambahkan ke keranjang!`);
+        // }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+            updateCartCount();
+        }
+
+        function saveCart() {
+            localStorage.setItem('theThriftCart', JSON.stringify(cart));
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = count;
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cartItems');
+            const totalDisplay = document.getElementById('cartTotalDisplay');
+            
+            container.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-msg" style="text-align:center; margin-top:2rem; color:#999;">Keranjang Anda kosong.</p>';
+                totalDisplay.innerText = formatRupiah(0);
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                container.innerHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.title} (${item.quantity}x)</h4>
+                            <span class="cart-item-price">${formatRupiah(item.price * item.quantity)}</span>
+                        </div>
+                        <span class="remove-item" onclick="removeFromCart(${index})">Hapus</span>
+                    </div>
+                `;
+            });
+
+            totalDisplay.innerText = formatRupiah(total);
+        }
+
+        // --- EVENT LISTENERS FOR BUY BUTTONS ---
+        // Update event listener tombol beli yang lama
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Mencegah klik card
+                const card = btn.closest('.product-card');
+                const title = card.querySelector('.product-title').textContent;
+                const price = card.querySelector('.price').textContent;
+                const img = card.querySelector('img').src;
+                
+                addToCart(title, price, img);
+            });
+        });
+
+        // --- CHECKOUT LOGIC ---
+        function goToCheckout() {
+            if (cart.length === 0) {
+                alert("Keranjang kosong!");
+                return;
+            }
+            renderCheckoutPage();
+            showSection('pembelian');
+        }
+
+        function renderCheckoutPage() {
+            const container = document.getElementById('checkoutItems');
+            const finalTotal = document.getElementById('finalTotal');
+            
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                container.innerHTML += `
+                    <div class="checkout-item-row">
+                        <span>${item.title} x ${item.quantity}</span>
+                        <span>${formatRupiah(subtotal)}</span>
+                    </div>
+                `;
+            });
+
+            finalTotal.innerText = formatRupiah(total);
+        }
+
+        function copyRekening() {
+            navigator.clipboard.writeText("1234567890");
+            alert("Nomor rekening berhasil disalin!");
+        }
+
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('imagePreview');
+                output.innerHTML = `<img src="${reader.result}" alt="Bukti Transfer">`;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function processToWhatsApp() {
+            const proofInput = document.getElementById('paymentProof');
+            
+            if (cart.length === 0) return alert("Keranjang kosong.");
+            if (proofInput.files.length === 0) {
+                return alert("Mohon upload bukti transfer terlebih dahulu.");
+            }
+
+            let message = "Halo The Thrift, saya ingin konfirmasi pesanan:\n\n";
+            let total = 0;
+
+            cart.forEach(item => {
+                message += `- ${item.title} (${item.quantity}x) : ${formatRupiah(item.price * item.quantity)}\n`;
+                total += item.price * item.quantity;
+            });
+
+            message += `\nTotal Pembayaran: *${formatRupiah(total)}*`;
+            message += `\n\nSaya telah melampirkan bukti transfer. Mohon diproses.`;
+
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = "6281234567890"; // Ganti dengan nomor Anda
+            
+            // Catatan: WhatsApp Web API tidak bisa mengirim file gambar secara otomatis dari browser
+            // Kita hanya bisa membuka chat dengan teks yang sudah terisi.
+            alert("Anda akan diarahkan ke WhatsApp. Mohon kirim foto bukti transfer yang sudah Anda pilih secara manual di chat.");
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Opsional: Kosongkan keranjang setelah checkout
+            cart = [];
+            saveCart();
+            updateCartCount();
+            showSection('home');
+        }
+
+        // --- INITIALIZATION ---
+        // Handle filter (kode lama)
+        // const filterBtns = document.querySelectorAll('.filter-btn');
+        // const productCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                productCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Form kontak (kode lama)
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Pesan terkirim!");
+            this.reset();
+        });
+
+        // Animate on scroll (kode lama)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.product-card, .value-card').forEach(el => observer.observe(el));
+
+        // Load initial cart count
+        updateCartCount();
+        
+        // Handle hash on load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) showSection(hash);
         });
 
         // Animate on scroll
@@ -642,14 +1059,14 @@
             rootMargin: '0px 0px -100px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+        // const observer = new IntersectionObserver((entries) => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             entry.target.style.opacity = '1';
+        //             entry.target.style.transform = 'translateY(0)';
+        //         }
+        //     });
+        // }, observerOptions);
 
         document.querySelectorAll('.product-card, .product-card-preview, .value-card, .team-member, .info-item, .social-link').forEach(el => {
             el.style.opacity = '0';
